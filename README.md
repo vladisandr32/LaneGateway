@@ -158,40 +158,77 @@ CLI — для быстрого тестирования новых функци
 Примерная структура каталогов и файлов проекта:
 
 LaneGateway/
+
 ├── app/
+
 │   ├── main.py              # создание FastAPI-приложения, подключение api-роутов
+
 │   ├── core/
+
 │   │   ├── config.py        # настройки (Pydantic Settings, .env)
+
 │   │   ├── logging.py       # настройка логирования
+
 │   │   ├── security.py      # авторизация (API-key dependency)
-│   │   └── db.py            # подключение к SQLite, сессии
+
+│   │   └── db.py            # подключение к SQLite сессии
+
 │   │
+
 │   ├── api/                 # HTTP-эндпоинты (FastAPI-роуты)
+
 │   │   ├── deps.py
+
 │   │   └── v1/
+
 │   │       ├── chat.py
+
 │   │       └── health.py
+
 │   │
+
 │   ├── providers/
+
 │   │   ├── base.py          # уже есть
+
 │   │   ├── registry.py      # ProviderRegistry — новый провайдер регистрируется, не хардкодится
+
 │   │   └── openrouter.py    # уже есть; openai/, ollama/, anthropic/, gemini/ — позже
+
 │   │
+
 │   ├── models_manager.py    # обёртка над ProviderRegistry: chat/vision/embeddings по имени модели
+
 │   │
+
 │   └── schemas/              # Pydantic-схемы запросов/ответов API (отдельно от dataclass-ов провайдера)
+
 │       └── chat.py
+
 │
+
 ├── tests/
+
 │   ├── test_providers/
+
 │   │   └── test_openrouter.py
+
 │   └── test_api/
+
 │
+
 ├── example_usage.py
+
 ├── docker-compose.yml
+
 ├── Dockerfile
+
 ├── requirements.txt (или pyproject.toml)
+
 ├── .env.example
+
 ├── .gitignore
+
 ├── LICENSE
+
 └── README.md
