@@ -232,3 +232,11 @@ LaneGateway/
 ├── LICENSE
 
 └── README.md
+
+router/ — rule-based + AI роутер, needs-mapper
+tools/ — search/git/docker/ssh/browser
+pipeline/ — движок пайплайнов
+memory/ — facts/documents/summaries + embeddings-поиск
+policy/ — YAML-политики (budget/forbid/prefer)
+events/ — свой async Event Bus
+clients/cli/, clients/telegram/, clients/webui/

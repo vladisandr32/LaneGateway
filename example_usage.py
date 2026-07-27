@@ -1,20 +1,20 @@
-#Пример использования OpenRouterProvider.
+#Пример использования OpenRouterProvider напрямую, без сервера.
 #
-#Запуск:
+#Запуск из корня репозитория:
 #    export OPENROUTER_API_KEY=sk-or-...
-#   python example_usage.py
+#    python example_usage.py
 
 import asyncio
 import os
 
-from providers.base import Message
-from providers.openrouter import OpenRouterProvider
+from app.providers.base import Message
+from app.providers.openrouter import OpenRouterProvider
 
 
 async def main():
     provider = OpenRouterProvider(
         api_key=os.environ["OPENROUTER_API_KEY"],
-        site_name="AI Router (dev)",
+        site_name="LaneGateway (dev)",
     )
 
     #Каталог моделей (цены, модальности) нужно подтянуть один раз при старте
