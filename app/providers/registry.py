@@ -1,4 +1,9 @@
 #ProviderRegistry — новый провайдер регистрируется, а не хардкодится
+#
+#Использование (в будущем, при старте приложения):
+#   registry = ProviderRegistry()
+#   registry.register(OpenRouterProvider(api_key=...))
+#   provider = registry.get("openrouter")
 
 from typing import Optional
 

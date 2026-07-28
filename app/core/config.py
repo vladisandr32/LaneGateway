@@ -16,6 +16,12 @@ class Settings(BaseSettings):
     #Провайдеры (ключи; на будущих этапах провайдеров станет больше)
     openrouter_api_key: str = ""
 
+    #Модули (Этап Router) — URL твоего self-hosted SearXNG; пусто = модуль поиска выключен
+    searxng_url: str = ""
+
+    #Путь к файлу событий роутера (Decision Replay)
+    events_db_path: str = "./lanegateway_events.db"
+
     class Config:
         env_file = ".env"
 

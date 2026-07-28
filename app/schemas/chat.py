@@ -17,6 +17,7 @@ class ChatRequest(BaseModel):
 
 
 class ChatResponse(BaseModel):
+    request_id: str
     text: str
     model: str
     prompt_tokens: int
